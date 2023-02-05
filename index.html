@@ -25,7 +25,7 @@
             <nav>
                 <ul class="site-nav flex-container">
                     <li class="item">
-                        <a href="./index.html" class="link  current">Cтудія</a>
+                        <a href="./index.html" class="link current">Cтудія</a>
                     </li>
                     <li class="item">
                         <a href="./portfolio.html" class="link">Портфоліо</a>
@@ -57,7 +57,12 @@
                     Ефективні рішення для <br />
                     вашого бізнесу
                 </h1>
-                <button type="button" class="btn btn-hero">Замовити послугу</button>
+                <button type="button" class="btn btn-hero" data-modal-open>Замовити послугу</button>
+                <div class="backdrop is-hidden" data-modal>
+                    <div class="modal">
+                        <button class=" modal-close" data-modal-close> </button>
+                    </div>
+                </div>
             </div>
         </section>
         <section class="section features">
@@ -118,16 +123,25 @@
                 <h2 class="section-title">Чим ми займаємося</h2>
                 <ul class="tasks flex-container">
                     <li class="item">
-                        <img class="task-photo" src="./images/tasks/box_1.jpg" alt="Верстка сайтів" width="370"
-                            height="294" />
+                        <div class="task-thumb">
+                            <img class="task-photo" src="./images/tasks/box_1.jpg" alt="Верстка сайтів" width="370"
+                                height="294" />
+                            <p class="thumb-text">Десктопні додатки</p>
+                        </div>
                     </li>
                     <li class="item">
-                        <img class="task-photo" src="./images/tasks/box_2.jpg" alt="Мобільні додатки" width="370"
-                            height="294" />
+                        <div class="task-thumb">
+                            <img class="task-photo" src="./images/tasks/box_2.jpg" alt="Мобільні додатки" width="370"
+                                height="294" />
+                            <p class="thumb-text">Мобільні додатки</p>
+                        </div>
                     </li>
                     <li class="item">
-                        <img class="task-photo" src="./images/tasks/box_1.jpg" alt="Графічний дизайн" width="370"
-                            height="294" />
+                        <div class="task-thumb">
+                            <img class="task-photo" src="./images/tasks/box_1.jpg" alt="Графічний дизайн" width="370"
+                                height="294" />
+                            <p class="thumb-text">Дизайнерські рішення</p>
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -321,6 +335,7 @@
                 </div>
             </div>
     </footer>
+    <script src="./js/modal.js"></script>
 </body>
 
 </html>

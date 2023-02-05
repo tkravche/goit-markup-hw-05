@@ -131,6 +131,20 @@ img {
 .site-nav .link.current {
   color: var(--accent-color);
 }
+.link.current {
+  position: relative;
+}
+.link.current::after {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  content: "";
+  height: 4px;
+  width: 100%;
+  background: var(--accent-color);
+  border-radius: 2px;
+}
 .contacts {
   margin-left: auto;
 }
@@ -216,6 +230,49 @@ img {
 .btn-hero:hover .btn-hero:focus {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
+/* Modal and backdrop */
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  height: 100%;
+  width: 100%;
+
+  background-color: rgba(0, 0, 0, 0.2);
+
+  z-index: 1;
+}
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+.modal {
+  position: relative;
+  min-height: 581px;
+  min-width: 528px;
+  background-color: var(--background-color);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.modal-close {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  top: 8px;
+  right: 8px;
+  border-radius: 50%;
+  /* background-image: url(../images/close.svg);
+  background-repeat: no-repeat;
+  background-position: center;*/
+  border: none;
+  background-color: var(--background-color);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
 /* Features*/
 .feature-list .item {
   width: calc((100% - (30px * 3)) / 4);
@@ -254,6 +311,28 @@ img {
 }
 .tasks.flex-container {
   gap: 30px;
+}
+.task-thumb {
+  position: relative;
+}
+.thumb-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+
+  font-weight: 700;
+  font-size: 14px;
+  line-height: calc(16 / 14);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+
+  color: var(--background-color);
+  background-color: rgba(47, 48, 58, 0.8);
 }
 /* Team */
 section.team {
