@@ -31,7 +31,6 @@
 }
 /* For all elements in body */
 body {
-  transition-timing-function: ;
   font-family: Roboto, sans-serif;
   font-weight: 400;
   letter-spacing: 0.03em;
@@ -236,9 +235,7 @@ img {
   padding: 10px 32px;
   transition: box-shadow var(--animation);
 }
-.btn-hero:hover .btn-hero:focus {
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-}
+
 /* Modal and backdrop */
 .backdrop {
   position: fixed;
@@ -265,7 +262,7 @@ img {
   width: 528px;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translateX(-50%) translateY(-50%);
 
   background-color: var(--background-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
@@ -275,7 +272,7 @@ img {
 }
 .backdrop.is-hidden .modal {
   opacity: 0;
-  transform: translate(-50% -70%);
+  transform: translateX(-50%) translateY(-50%) scale(0.1);
 }
 
 .modal-close {
@@ -536,7 +533,7 @@ section.team {
   transform: translateY(100%);
   transition: transform var(--animation);
 }
-.project-item:hover .overlay-text {
+.project-link:hover .overlay-text {
   transform: translateY(0%);
 }
 .footer {
@@ -584,7 +581,7 @@ section.team {
 
   color: var(--background-color);
 }
-.socials .link-icon {
+.footer-socials .link-icon {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -613,6 +610,10 @@ section.team {
 }
 .btn-filter {
   transition: box-shadow var(--animation);
+  transition: color var(--animation), background-color var(--animation);
+}
+.btn-hero {
+  transition: box-shadow var(--animation);
 }
 .link:hover,
 .link:focus {
@@ -628,8 +629,12 @@ section.team {
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
   outline: transparent;
+  background-color: var(--accent-color);
 }
-
+.btn-hero:hover,
+.btn-hero:focus {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+}
 .project-item:hover,
 .project-item:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
